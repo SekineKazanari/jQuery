@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Clase</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<style type="text/css">
 		.super_div{
 			width: 100%;
@@ -46,12 +47,10 @@
 					<label>
 						Ingrese un valor:
 					</label>
-					<input autofocus type="text" value="10" id="edad" name="">
+					<input id="edad" autofocus type="text" id="input" name="">
 
-					<input type="button" id="boton" value="copiar valor" onclick="accion()" name="">
+					<input type="button" id="boton" value="copiar valor" name="">
 				</fieldset> 
-
-				<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 				<fieldset style="margin-top: 10px;">
 					<legend>
@@ -59,24 +58,22 @@
 					</legend>
 
 					<label>
-						<script>
-					        $("button").on('click', function(){
-					           var edad = $("#edad").val()
-					           alert(edad)
-					           console.log(var)
-					        })
-
-					        function action(){
-					        	console.log("X")
-					        }
-					    </script>
+						<b id="b">aquí estará el valor</b>
 					</label>
 				</fieldset>
 			</form>
 		</div>
 		
 	</div>
-
+	<script>
+	$("document").ready(function(){
+		$("#boton").on("click",function(){
+			var value = $("#edad").val();
+			$("#b").text(value);
+			
+		});
+	});
+	</script>
 
 </body>
 </html>
